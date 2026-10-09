@@ -1,0 +1,40 @@
+/* Target the raw HTML input element directly to bypass Cloudscape hashes */
+.customSearch :global(input) {
+  background-color: #0F141A !important; /* Dark black background */
+  color: #ffffff !important;
+  border: 2px solid #545b64 !important;
+  border-radius: 10px !important; /* Pill shape matching original AWS */
+  padding-right: 170px !important; /* Big space for [Alt+S] text */
+}
+
+/* White background when the user clicks to type */
+.customSearch :global(input:focus) {
+  background-color: #0F141A !important;
+  color: #fefefe !important;
+  border-color: #0073bb !important;
+}
+
+/* Position the [Alt+S] Ask Amazon Q text inside the input */
+.searchSuffix {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #aab7b8;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.customLayoutWrapper :global([class*="awsui_navigation-toggle"]),
+.customLayoutWrapper :global([class*="awsui_app-layout__navigation-toggle"]),
+.customLayoutWrapper :global(button[aria-label="Main menu"]),
+.customLayoutWrapper :global(button[aria-label="Open navigation"]) {
+  display: none !important;
+}
+
+
+
